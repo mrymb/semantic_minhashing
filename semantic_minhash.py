@@ -9,7 +9,7 @@ from nltk import ngrams
 import re
 from sklearn.metrics import accuracy_score
 
-class minhash2: #returns for all
+class minhash: #returns for all
 
     def __init__(self,str1=None,str2=None,k=5,hops=None):
         
@@ -403,7 +403,7 @@ def main():
  
     for i in range(1,n):
         print('Processing Sentence: ',i)
-        m=minhash2(df.str1.iloc[i],df.str2.iloc[i],k=7,hops=1)
+        m=minhash(df.str1.iloc[i],df.str2.iloc[i],k=7,hops=1)
         m.compute()
         df.loc[i,'hypernyms_1']=m.minhash_semantic_similarity_score_hyper
 
